@@ -24,10 +24,14 @@
      3、默认是五颗星，宽高相等
      
      */
-    StarView *starView = [[StarView alloc] initWithFrame:CGRectMake(100, 100, 200, 200) EmptyImage:@"emptyStar" StarImage:@"Star"];
+    StarView *starView = [[StarView alloc] initWithFrame:CGRectMake(100, 100, 200, 50) EmptyImage:@"emptyStar" StarImage:@"Star"];
+    
+    StarView *starView1 = [[StarView alloc] initWithFrame:CGRectMake(100, 180, 200, 50) EmptyImage:@"emptyStar" StarImage:@"Star"];
+    StarView *starView2 = [[StarView alloc] initWithFrame:CGRectMake(100, 260, 200, 50) EmptyImage:@"emptyStar" StarImage:@"Star"];
     
     [self.view addSubview:starView];
-    
+    [self.view addSubview:starView1];
+    [self.view addSubview:starView2];
 }
 
 - (void)didReceiveMemoryWarning {

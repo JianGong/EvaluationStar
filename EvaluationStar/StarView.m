@@ -10,13 +10,11 @@
 
 #define imageW  self.bounds.size.width/10
 
-#define Margin (self.bounds.size.height-self.rows*imageW)/(self.rows - 1)
 @interface StarView ()
 
 @property (nonatomic, strong) UIView *starBackgroundView;
 @property (nonatomic, strong) UIView *starForegroundView;
-@property (assign, nonatomic) int  rows;
-@property (nonatomic,strong)UIView *view;
+
 
 @end
 @implementation StarView
@@ -74,6 +72,10 @@
 
 -(void)tapGR:(UITapGestureRecognizer *)tapGR{
     CGPoint point =[tapGR locationInView:self];
+    if (point.x<0) {
+        point.x = 0;
+    }
+    
     int X = (int) point.x/(2*imageW);
     
     self.starForegroundView.frame = CGRectMake(0, 0, (X+1)*2*imageW, imageW);
